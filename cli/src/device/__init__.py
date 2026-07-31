@@ -42,7 +42,7 @@ class Device(ABC):
         self.logger = logging.getLogger(self.__class__.__name__)
         self.device_type = None
         self.interval_waiting = int(os.getenv(ENV.DEVICE_INTERVAL_WAITING, 2))
-        self.user_behavior_analytics = convert_str_to_bool(os.getenv(ENV.USER_BEHAVIOR_ANALYTICS, "true"))
+        self.user_behavior_analytics = False
         self.form_field = {
             Device.FORM_USER: "entry.108751316",
             Device.FORM_CITY: "entry.2083022547",
