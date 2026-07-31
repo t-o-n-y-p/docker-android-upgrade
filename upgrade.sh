@@ -3,7 +3,6 @@
 declare -A android_api_versions=(
     ["15.0"]="35"
     ["16.0"]="36"
-    ["17.0"]="37.0"
 )
 set -x
 for android_version in "${!android_api_versions[@]}"; do
