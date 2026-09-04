@@ -30,6 +30,14 @@ COPY mixins ${APP_PATH}/mixins
 COPY cli ${APP_PATH}/cli
 RUN echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+RUN avdmanager delete avd -n nexus_5_5.0 || true && \
+    echo "no" | avdmanager create avd \
+    --force \
+    --name "nexus_5_5.0" \
+    --package "system-images;android-${EMULATOR_API_LEVEL};${EMULATOR_IMG_TYPE};${EMULATOR_SYS_IMG}" \
+    --tag "${EMULATOR_IMG_TYPE}" \
+    --abi "${EMULATOR_SYS_IMG}"
+
 #==================
 # Use created user
 #==================
