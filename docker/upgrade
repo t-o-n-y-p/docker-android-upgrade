@@ -16,6 +16,7 @@ ENV EMULATOR_ANDROID_VERSION=${K8S_ANDROID_VERSION} \
 ENV PATH=${PATH}:${ANDROID_HOME}/build-tools
 RUN yes | sdkmanager --uninstall "platforms;android-34" \
  "system-images;android-34;google_apis;x86_64"
+RUN rm -rf ${ANDROID_HOME}/platforms/android-34 && rm -rf ${ANDROID_HOME}/system-images/android-34
 RUN yes | sdkmanager --licenses && sdkmanager "platforms;android-${EMULATOR_API_LEVEL}" \
  "system-images;android-${EMULATOR_API_LEVEL};${EMULATOR_IMG_TYPE};${EMULATOR_SYS_IMG}"
 
