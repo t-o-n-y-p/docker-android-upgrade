@@ -17,6 +17,7 @@ ENV PATH=${PATH}:${ANDROID_HOME}/build-tools
 RUN yes | sdkmanager --uninstall "platforms;android-34" \
  "system-images;android-34;google_apis;x86_64"
 RUN rm -rf ${ANDROID_HOME}/platforms/android-34 && rm -rf ${ANDROID_HOME}/system-images/android-34
+RUN avdmanager delete avd -n nexus_5_14.0 || true
 RUN yes | sdkmanager --licenses && sdkmanager "platforms;android-${EMULATOR_API_LEVEL}" \
  "system-images;android-${EMULATOR_API_LEVEL};${EMULATOR_IMG_TYPE};${EMULATOR_SYS_IMG}"
 
