@@ -16,6 +16,7 @@ Advantages of using this project
 5. Integrated with other cloud solutions, e.g. [Genymotion Cloud](https://www.genymotion.com/cloud/)
 6. It can be used to build Android project
 7. It can be used to run unit and UI-Test with different test-frameworks, e.g. Appium, Espresso, etc.
+8. It support mcp server (beta-version)
 
 List of Docker-Images
 ---------------------
@@ -28,6 +29,7 @@ List of Docker-Images
 |13.0|33|budtmo/docker-android:emulator_13.0|budtmo/docker-android:emulator_13.0_<release_version>|
 |14.0|34|budtmo/docker-android:emulator_14.0|budtmo/docker-android:emulator_14.0_<release_version>|
 |-|-|budtmo/docker-android:genymotion|budtmo/docker-android:genymotion_<release_version>|
+|-|-|budtmo/docker-android:mcp|budtmo/docker-android:mcp_<release_version>|
 
 List of Devices
 ---------------
@@ -178,6 +180,19 @@ The differences between normal version and pro version are:
 |Video Recording|No|Yes (soon)|Helpful for debugging|
 
 This [document](./documentations/DOCKER-ANDROID-PRO.md) contains detail information about how to use docker-android-pro.
+
+SPONSORS
+--------
+
+<p align="center">
+  <a href="https://www.swiftproxy.net/?ref=budtmo">
+    <img src="./images/sponsor_swiftproxy.png" alt="Swiftproxy" width="700">
+  </a>
+</p>
+
+**Swiftproxy** — **Swiftproxy** provides high-quality residential proxies for Android testing, automation, and location-based workflows. With **90M+ residential IPs**, HTTP(S)/SOCKS5 support, flexible targeting, and **non-expiring traffic**, Swiftproxy helps users test apps and online services from different locations. **Try Swiftproxy for free today** and get **10% off with code PROXY90**.
+
+[Learn more about Swiftproxy →](https://www.swiftproxy.net/?ref=budtmo)
 
 LICENSE
 -------
