@@ -7,6 +7,17 @@
 
 Docker-Android is a docker image built to be used for everything related to Android. It can be used for Application development and testing (native, web and hybrid-app).
 
+Sponsors
+--------
+
+<p align="center">
+  <a href="https://proxy-seller.com/?utm_source=github&utm_medium=referral&utm_campaign=budtmo&utm_term=github">
+    <img src="./images/sponsor_proxyseller.png" alt="ProxySeller" width="500">
+  </a>
+</p>
+
+[Proxy-Seller](https://proxy-seller.com/?utm_source=github&utm_medium=referral&utm_campaign=budtmo&utm_term=github) gives you reliable proxy infrastructure for any workflow: private residential, mobile (4G/5G/LTE), ISP, and datacenter IPv4/IPv6 proxies, all with HTTP(S) and SOCKS5 support. Tap into 47M+ residential IPs across 220+ locations, target exactly the country, city, or ISP you need, and count on 99.7% uptime backed by 24/7 support. Get 15% off with promo code **BUDTMO**.
+
 Advantages of using this project
 --------------------------------
 1. Emulator with different device profile and skins, such as Samsung Galaxy S6, LG Nexus 4, HTC Nexus One and more.
@@ -16,7 +27,12 @@ Advantages of using this project
 5. Integrated with other cloud solutions, e.g. [Genymotion Cloud](https://www.genymotion.com/cloud/)
 6. It can be used to build Android project
 7. It can be used to run unit and UI-Test with different test-frameworks, e.g. Appium, Espresso, etc.
-8. It support mcp server (beta-version)
+8. It support (http) MCP-Server (beta-version)
+9. It support AI-Agent (beta-version) - supported local-LLM server: Ollama, VLLM
+
+<p align="center">
+  <img src="./images/mcp_and_ai_agent.png">
+</p>
 
 List of Docker-Images
 ---------------------
@@ -169,9 +185,10 @@ The differences between normal version and pro version are:
 |Feature   |Normal   |Pro   |Comment|
 |:---|:---|:---|:---|
 |user-behavior-analytics|Yes|No|-|
+|ai-agent|No|Yes|Currently supported local-LLM server: Ollama, VLLM|
 |proxy|No|Yes|Set up company proxy on Android emulator on fly|
 |language|No|Yes|Set up language on Android emulator on fly|
-|Newer Android version|No|Yes|Support other newer Android version e.g. Android 15, Android 16, etc|
+|Newer Android version|No|Yes|Support other newer Android version e.g. Android 15, Android 16, Android 17, etc|
 |root-privileged|No|Yes|Able to run command with security privileged|
 |headless-mode|No|Yes|Save resources by using headless mode|
 |Selenium 4.x integration|No|Yes|Running Appium UI-Tests againt one (Selenium Hub) endpoint for Android- and iOS emulator(s) / device(s)|
@@ -179,20 +196,32 @@ The differences between normal version and pro version are:
 |Google Play Store|No|Yes (soon)|-|
 |Video Recording|No|Yes (soon)|Helpful for debugging|
 
+List pro-version images:
+
+|Android   |API   |Type  |Image with latest release version   |Image with specific release version|
+|:---|:---|:---|:---|:---|
+|9.0|28|Normal|budtmo2/docker-android-pro:emulator_9.0|budtmo2/docker-android-pro:emulator_9.0_<release_version>|
+|10.0|29|Normal|budtmo2/docker-android-pro:emulator_10.0|budtmo2/docker-android-pro:emulator_10.0_<release_version>|
+|11.0|30|Normal|budtmo2/docker-android-pro:emulator_11.0|budtmo2/docker-android-pro:emulator_11.0_<release_version>|
+|12.0|32|Normal|budtmo2/docker-android-pro:emulator_12.0|budtmo2/docker-android-pro:emulator_12.0_<release_version>|
+|13.0|33|Normal|budtmo2/docker-android-pro:emulator_13.0|budtmo2/docker-android-pro:emulator_13.0_<release_version>|
+|14.0|34|Normal|budtmo2/docker-android-pro:emulator_14.0|budtmo2/docker-android-pro:emulator_14.0_<release_version>|
+|15.0|35|Normal|budtmo2/docker-android-pro:emulator_15.0|budtmo2/docker-android-pro:emulator_15.0_<release_version>|
+|16.0|36|Normal|budtmo2/docker-android-pro:emulator_16.0|budtmo2/docker-android-pro:emulator_16.0_<release_version>|
+|17.0|37|Normal|budtmo2/docker-android-pro:emulator_17.0|budtmo2/docker-android-pro:emulator_17.0_<release_version>|
+|9.0|28|Headless|budtmo2/docker-android-pro:emulator_headless_9.0|budtmo2/docker-android-pro:emulator_headless_9.0_<release_version>|
+|10.0|29|Headless|budtmo2/docker-android-pro:emulator_headless_10.0|budtmo2/docker-android-pro:emulator_headless_10.0_<release_version>|
+|11.0|30|Headless|budtmo2/docker-android-pro:emulator_headless_11.0|budtmo2/docker-android-pro:emulator_headless_11.0_<release_version>|
+|12.0|32|Headless|budtmo2/docker-android-pro:emulator_headless_12.0|budtmo2/docker-android-pro:emulator_headless_12.0_<release_version>|
+|13.0|33|Headless|budtmo2/docker-android-pro:emulator_headless_13.0|budtmo2/docker-android-pro:emulator_headless_13.0_<release_version>|
+|14.0|34|Headless|budtmo2/docker-android-pro:emulator_headless_14.0|budtmo2/docker-android-pro:emulator_headless_14.0_<release_version>|
+|15.0|35|Headless|budtmo2/docker-android-pro:emulator_headless_15.0|budtmo2/docker-android-pro:emulator_headless_15.0_<release_version>|
+|16.0|36|Headless|budtmo2/docker-android-pro:emulator_headless_16.0|budtmo2/docker-android-pro:emulator_headless_16.0_<release_version>|
+|17.0|37|Headless|budtmo2/docker-android-pro:emulator_headless_17.0|budtmo2/docker-android-pro:emulator_headless_17.0_<release_version>|
+|-|-|AI-Agent|budtmo2/docker-android-pro:agent|budtmo2/docker-android-pro:agent_<release_version>|
+|-|-|Selenium|budtmo2/docker-android-pro:selenium|budtmo2/docker-android-pro:selenium_<release_version>|
+
 This [document](./documentations/DOCKER-ANDROID-PRO.md) contains detail information about how to use docker-android-pro.
-
-SPONSORS
---------
-
-<p align="center">
-  <a href="https://www.swiftproxy.net/?ref=budtmo">
-    <img src="./images/sponsor_swiftproxy.png" alt="Swiftproxy" width="700">
-  </a>
-</p>
-
-**Swiftproxy** — **Swiftproxy** provides high-quality residential proxies for Android testing, automation, and location-based workflows. With **90M+ residential IPs**, HTTP(S)/SOCKS5 support, flexible targeting, and **non-expiring traffic**, Swiftproxy helps users test apps and online services from different locations. **Try Swiftproxy for free today** and get **10% off with code PROXY90**.
-
-[Learn more about Swiftproxy →](https://www.swiftproxy.net/?ref=budtmo)
 
 LICENSE
 -------
